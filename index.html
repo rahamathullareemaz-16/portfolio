@@ -1,245 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reemaz Portfolio</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #020617;
-  color: white;
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.hero img {
-  width: 280px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px #38bdf8;
-}
-
-.typing {
-  color: #38bdf8;
-}
-
-/* BUTTON */
-.btn {
-  margin: 10px;
-  padding: 10px 20px;
-  background: #38bdf8;
-  color: black;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-/* CASE STUDY */
-.case-study {
-  display: flex;
-  gap: 50px;
-  margin: 80px 5%;
-  align-items: center;
-  animation: fadeUp 1.5s;
-}
-
-.case-study.reverse {
-  flex-direction: row-reverse;
-}
-
-.case-img {
-  width: 50%;
-  border-radius: 20px;
-}
-
-.case-content {
-  width: 50%;
-}
-
-.case-content h1 {
-  font-size: 32px;
-}
-
-.case-content h3 {
-  color: #38bdf8;
-}
-
-.case-content p {
-  color: #cbd5f5;
-  line-height: 1.6;
-}
-
-/* TAG */
-.tag {
-  background: #e2d3b5;
-  padding: 8px 15px;
-  border-radius: 20px;
-  color: black;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .case-study {
-    flex-direction: column;
-  }
-  .case-img, .case-content {
-    width: 100%;
-  }
-}
-</style>
+<title>Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>RAHAMATHULLA REEMAZ H</h1>
-    <p class="typing" id="typing"></p>
-
-    <a class="btn" href="https://github.com/rahamathullareemaz-16">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/rahamathulla-reemaz-h-52b373299/">LinkedIn</a>
-    <a class="btn" href="resume.pdf">Resume</a>
-  </div>
-
-  <img src="profile.jpg">
+<div id="loader">
+  <div class="loader-circle"></div>
 </div>
 
-<!-- ECG -->
-<div class="case-study">
-  <img src="ecg.jpg" class="case-img">
-
-  <div class="case-content">
-    <span class="tag">Embedded + AI</span>
-    <h1>Intelligent Adaptive Real-Time ECG Monitoring</h1>
-
-    <h3>Problem</h3>
-    <p>
-    Cardiovascular diseases require continuous monitoring, but traditional embedded ECG systems fail under high CPU load,
-    causing missed deadlines and unreliable performance.
-    </p>
-
-    <h3>Solution</h3>
-    <p>
-    Developed an intelligent ECG monitoring system using Raspberry Pi and biomedical sensors 
-    (AD8232, MAX30102, DS18B20) integrated with predictive CPU control and AI analytics.
-    </p>
-
-    <h3>Implementation</h3>
-    <p>
-    Used POSIX multi-threading with SCHED_FIFO scheduling, predictive CPU trend analysis,
-    adaptive gain control, and medical-aware prioritization.
-    </p>
-
-    <h3>Outcome</h3>
-    <p>
-    Achieved stable CPU utilization, reduced deadline misses, real-time visualization,
-    and reliable detection of abnormal cardiac conditions.
-    </p>
-  </div>
+<div class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
 </div>
 
-<!-- RAIN -->
-<div class="case-study reverse">
-  <img src="rain.jpg" class="case-img">
+<div class="content">
 
-  <div class="case-content">
-    <span class="tag">Automation</span>
-    <h1>Smart Rain & Heat Response System</h1>
+<h1 class="hidden">RAHAMATHULLA REEMAZ H</h1>
+<img src="profile.jpg" width="150" class="hidden">
 
-    <h3>Problem</h3>
-    <p>
-    Manual control of windows and cooling systems leads to inconvenience,
-    energy wastage, and potential damage during sudden rainfall.
-    </p>
+<p class="hidden">Embedded Systems | IoT | AI Enthusiast</p>
 
-    <h3>Solution</h3>
-    <p>
-    Designed an automated Arduino-based system to monitor environmental conditions 
-    and react intelligently to rain and temperature changes.
-    </p>
+<a href="resume.pdf" class="hidden">View Resume</a>
 
-    <h3>Implementation</h3>
-    <p>
-    Integrated rain sensor, DHT11 temperature sensor, servo motor, relay module,
-    and LCD display for real-time monitoring and control.
-    </p>
+<h2 class="hidden">Achievements</h2>
 
-    <h3>Outcome</h3>
-    <p>
-    Improved comfort, safety, and energy efficiency with fully automated operation.
-    </p>
-  </div>
+<div class="card hidden">IEEE Member</div>
+<div class="card hidden">Vice Chair – IEEE SPS</div>
+<div class="card hidden">IEEE Ambassador</div>
+
 </div>
 
-<!-- CHATBOT -->
-<div class="case-study">
-  <img src="chatbot.jpg" class="case-img">
-
-  <div class="case-content">
-    <span class="tag">AI + ML</span>
-    <h1>Smart Customer Support Chatbot</h1>
-
-    <h3>Problem</h3>
-    <p>
-    Traditional customer support systems struggle to handle large volumes of queries efficiently,
-    leading to delays and poor user experience.
-    </p>
-
-    <h3>Solution</h3>
-    <p>
-    Developed an AI-powered chatbot combining ML-based intent recognition and GPT-based response generation.
-    </p>
-
-    <h3>Implementation</h3>
-    <p>
-    Built using HTML/CSS frontend, Flask backend, NLP (NLTK), and OpenAI integration
-    for intelligent and human-like conversation.
-    </p>
-
-    <h3>Outcome</h3>
-    <p>
-    Delivered fast, accurate, and scalable support system with improved user satisfaction.
-    </p>
-  </div>
-</div>
-
-<script>
-const text = ["Embedded Developer", "IoT Enthusiast", "Problem Solver"];
-let i=0,j=0,current="",isDeleting=false;
-
-function type(){
-  if(i<text.length){
-    if(!isDeleting && j<=text[i].length){
-      current=text[i].substring(0,j++);
-    }
-    else if(isDeleting && j>=0){
-      current=text[i].substring(0,j--);
-    }
-
-    if(j==text[i].length) isDeleting=true;
-    if(j==0){ isDeleting=false; i++; }
-
-    document.getElementById("typing").innerHTML=current;
-  }
-  setTimeout(type,140);
-}
-type();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
