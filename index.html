@@ -9,17 +9,18 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
+  background: linear-gradient(135deg,#020617,#0f172a);
   color: #e2e8f0;
 }
 
-/* Navbar */
+/* NAVBAR */
 nav {
   position: sticky;
   top: 0;
-  background: #020617;
+  background: rgba(2,6,23,0.9);
   padding: 15px;
   text-align: center;
+  backdrop-filter: blur(10px);
 }
 nav a {
   color: #38bdf8;
@@ -31,47 +32,59 @@ nav a:hover {
   color: white;
 }
 
-/* Hero */
+/* HERO */
 header {
   text-align: center;
-  padding: 60px 20px;
-  animation: fadeIn 2s;
+  padding: 80px 20px;
 }
 header h1 {
-  font-size: 40px;
+  font-size: 42px;
 }
 header p {
   color: #94a3b8;
 }
 
-/* Sections */
-section {
-  margin: 30px;
-  padding: 20px;
-  background: #020617;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  transition: transform 0.3s;
-}
-section:hover {
-  transform: scale(1.02);
+/* GLOW EFFECT */
+header::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  background: radial-gradient(circle,#38bdf8,transparent);
+  filter: blur(80px);
 }
 
-/* Cards */
+/* SECTIONS */
+section {
+  margin: 30px;
+  padding: 25px;
+  background: rgba(2,6,23,0.8);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: fadeUp 1s;
+}
+
+/* CARDS */
 .card {
-  margin: 10px 0;
+  margin: 15px 0;
   padding: 15px;
   background: #1e293b;
   border-radius: 10px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: #334155;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+/* ANIMATION */
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
-/* Buttons */
+/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 10px;
@@ -94,6 +107,7 @@ section:hover {
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
+  <a href="#achievements">Achievements</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -105,12 +119,19 @@ section:hover {
 <section id="about">
   <h2>About Me</h2>
   <p>
-    Entry-level ECE student passionate about Embedded Systems, IoT, and real-time applications.
+    I’m an Electronics and Communication Engineering student with a CGPA of 7.57 and a clean academic record—no arrears, just consistent growth. But for me, engineering is more than marks or a degree; it’s about curiosity, building, and turning ideas into reality.
+    <br><br>
+    I enjoy learning by doing. Whether it’s working on circuits, exploring embedded systems, or experimenting with new tech, I believe practical experience teaches what textbooks cannot. I’m always excited to get my hands dirty and understand how things actually work.
+    <br><br>
+    I don’t just want to graduate as an engineer—I want to become one through innovation, creativity, and problem-solving. My goal is to build meaningful solutions and contribute something new to the world of technology.
+    <br><br>
+    <b>“The only way to do great work is to love what you do.”</b>
   </p>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
+  <div class="card">Embedded Systems, Digital Electronics</div>
   <div class="card">C Programming, Data Structures</div>
   <div class="card">Arduino, ESP32, 8051</div>
   <div class="card">Protocols: UART, SPI, I2C</div>
@@ -121,24 +142,36 @@ section:hover {
 
   <div class="card">
     <h3>ECG Monitoring System</h3>
-    <p>Real-time health monitoring using sensors and Raspberry Pi.</p>
+    <p>Real-time ECG monitoring using Raspberry Pi and biomedical sensors with AI analytics.</p>
   </div>
 
   <div class="card">
     <h3>Smart Rain & Heat System</h3>
-    <p>Automated environment-based window & cooling system.</p>
+    <p>Automated window and cooling system based on environmental conditions.</p>
   </div>
 
   <div class="card">
-    <h3>Parking Assist System</h3>
-    <p>Ultrasonic-based obstacle detection system.</p>
+    <h3>Chatbot using ML & GPT</h3>
+    <p>AI chatbot for intelligent customer support and query handling.</p>
   </div>
+
+</section>
+
+<section id="achievements">
+  <h2>Achievements</h2>
+
+  <div class="card">IEEE Member – Actively contributing to professional development.</div>
+  <div class="card">Vice Chair, IEEE Signal Processing Society – Led initiatives at KCE.</div>
+  <div class="card">IEEE CS SYP TECH NYERI 2025 Ambassador.</div>
+  <div class="card">IEEE IMAS 2025 Conference Ambassador.</div>
+  <div class="card">Membership Development Team – IEEE KCE.</div>
 
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: rahmathullareemaz@gmail.com</p>
+  <p>Phone: 8056423233</p>
   <a class="btn" href="#">Download Resume</a>
 </section>
 
