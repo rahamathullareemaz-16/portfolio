@@ -11,7 +11,6 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #020617;
   color: white;
-  scroll-behavior: smooth;
 }
 
 /* HERO */
@@ -26,21 +25,16 @@ body {
 .hero img {
   width: 280px;
   border-radius: 20px;
-  box-shadow: 0 0 25px #38bdf8;
-}
-
-.hero-text h1 {
-  font-size: 42px;
+  box-shadow: 0 0 30px #38bdf8;
 }
 
 .typing {
   color: #38bdf8;
-  font-size: 20px;
 }
 
 /* BUTTON */
 .btn {
-  margin: 8px;
+  margin: 10px;
   padding: 10px 20px;
   background: #38bdf8;
   color: black;
@@ -48,34 +42,64 @@ body {
   text-decoration: none;
 }
 
-/* SECTION */
-section {
-  padding: 60px 30px;
+/* CASE STUDY */
+.case-study {
+  display: flex;
+  gap: 50px;
+  margin: 80px 5%;
+  align-items: center;
+  animation: fadeUp 1.5s;
 }
 
-/* CARD */
-.card {
-  background: #0f172a;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 12px;
-  transition: 0.4s;
-}
-.card:hover {
-  transform: translateY(-5px);
+.case-study.reverse {
+  flex-direction: row-reverse;
 }
 
-/* SMOOTH ANIMATION */
-.hidden {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: all 1.5s ease;
-}
-.show {
-  opacity: 1;
-  transform: translateY(0);
+.case-img {
+  width: 50%;
+  border-radius: 20px;
 }
 
+.case-content {
+  width: 50%;
+}
+
+.case-content h1 {
+  font-size: 32px;
+}
+
+.case-content h3 {
+  color: #38bdf8;
+}
+
+.case-content p {
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+/* TAG */
+.tag {
+  background: #e2d3b5;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: black;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(40px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .case-study {
+    flex-direction: column;
+  }
+  .case-img, .case-content {
+    width: 100%;
+  }
+}
 </style>
 </head>
 
@@ -83,88 +107,118 @@ section {
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-text">
+  <div>
     <h1>RAHAMATHULLA REEMAZ H</h1>
     <p class="typing" id="typing"></p>
 
-    <a class="btn" href="https://github.com/rahamathullareemaz-16" target="_blank">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/rahamathulla-reemaz-h-52b373299/" target="_blank">LinkedIn</a>
-    <a class="btn" href="resume.pdf" target="_blank">Resume</a>
+    <a class="btn" href="https://github.com/rahamathullareemaz-16">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/rahamathulla-reemaz-h-52b373299/">LinkedIn</a>
+    <a class="btn" href="resume.pdf">Resume</a>
   </div>
 
   <img src="profile.jpg">
 </div>
 
-<!-- ABOUT -->
-<section class="hidden">
-<h2>About Me</h2>
-<p>
-I’m an Electronics and Communication Engineering student with strong interest in Embedded Systems and real-time applications.  
-I enjoy hands-on learning, building systems, and solving real-world problems through innovation.  
-My goal is to develop intelligent and efficient solutions using embedded and AI-based technologies.
-</p>
-</section>
+<!-- ECG -->
+<div class="case-study">
+  <img src="ecg.jpg" class="case-img">
 
-<!-- SKILLS -->
-<section class="hidden">
-<h2>Skills</h2>
-<div class="card">Embedded Systems, Digital Electronics</div>
-<div class="card">C Programming, Data Structures</div>
-<div class="card">Arduino, ESP32, 8051</div>
-<div class="card">UART, SPI, I2C</div>
-</section>
+  <div class="case-content">
+    <span class="tag">Embedded + AI</span>
+    <h1>Intelligent Adaptive Real-Time ECG Monitoring</h1>
 
-<!-- PROJECTS -->
-<section class="hidden">
-<h2>Projects</h2>
+    <h3>Problem</h3>
+    <p>
+    Cardiovascular diseases require continuous monitoring, but traditional embedded ECG systems fail under high CPU load,
+    causing missed deadlines and unreliable performance.
+    </p>
 
-<div class="card">
-<h3>Intelligent Adaptive Real-Time ECG Monitoring</h3>
-<p>
-Developed a real-time ECG monitoring system using Raspberry Pi and biomedical sensors (AD8232, MAX30102, DS18B20).  
-Implemented predictive CPU control, adaptive scheduling, and AI-based health analytics to detect abnormalities and ensure reliable real-time performance.
-</p>
+    <h3>Solution</h3>
+    <p>
+    Developed an intelligent ECG monitoring system using Raspberry Pi and biomedical sensors 
+    (AD8232, MAX30102, DS18B20) integrated with predictive CPU control and AI analytics.
+    </p>
+
+    <h3>Implementation</h3>
+    <p>
+    Used POSIX multi-threading with SCHED_FIFO scheduling, predictive CPU trend analysis,
+    adaptive gain control, and medical-aware prioritization.
+    </p>
+
+    <h3>Outcome</h3>
+    <p>
+    Achieved stable CPU utilization, reduced deadline misses, real-time visualization,
+    and reliable detection of abnormal cardiac conditions.
+    </p>
+  </div>
 </div>
 
-<div class="card">
-<h3>Smart Rain & Heat Response System</h3>
-<p>
-Designed an automated system using Arduino that monitors rain and temperature.  
-Automatically closes windows during rain and activates cooling during high temperature to improve comfort and energy efficiency.
-</p>
+<!-- RAIN -->
+<div class="case-study reverse">
+  <img src="rain.jpg" class="case-img">
+
+  <div class="case-content">
+    <span class="tag">Automation</span>
+    <h1>Smart Rain & Heat Response System</h1>
+
+    <h3>Problem</h3>
+    <p>
+    Manual control of windows and cooling systems leads to inconvenience,
+    energy wastage, and potential damage during sudden rainfall.
+    </p>
+
+    <h3>Solution</h3>
+    <p>
+    Designed an automated Arduino-based system to monitor environmental conditions 
+    and react intelligently to rain and temperature changes.
+    </p>
+
+    <h3>Implementation</h3>
+    <p>
+    Integrated rain sensor, DHT11 temperature sensor, servo motor, relay module,
+    and LCD display for real-time monitoring and control.
+    </p>
+
+    <h3>Outcome</h3>
+    <p>
+    Improved comfort, safety, and energy efficiency with fully automated operation.
+    </p>
+  </div>
 </div>
 
-<div class="card">
-<h3>Smart Customer Support Chatbot</h3>
-<p>
-Developed an AI chatbot using Machine Learning and GPT.  
-Integrated NLP techniques and Flask backend to provide intelligent, fast, and human-like responses for customer queries.
-</p>
+<!-- CHATBOT -->
+<div class="case-study">
+  <img src="chatbot.jpg" class="case-img">
+
+  <div class="case-content">
+    <span class="tag">AI + ML</span>
+    <h1>Smart Customer Support Chatbot</h1>
+
+    <h3>Problem</h3>
+    <p>
+    Traditional customer support systems struggle to handle large volumes of queries efficiently,
+    leading to delays and poor user experience.
+    </p>
+
+    <h3>Solution</h3>
+    <p>
+    Developed an AI-powered chatbot combining ML-based intent recognition and GPT-based response generation.
+    </p>
+
+    <h3>Implementation</h3>
+    <p>
+    Built using HTML/CSS frontend, Flask backend, NLP (NLTK), and OpenAI integration
+    for intelligent and human-like conversation.
+    </p>
+
+    <h3>Outcome</h3>
+    <p>
+    Delivered fast, accurate, and scalable support system with improved user satisfaction.
+    </p>
+  </div>
 </div>
-
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section class="hidden">
-<h2>Achievements</h2>
-
-<div class="card">IEEE Member – Active contributor</div>
-<div class="card">Vice Chair – IEEE Signal Processing Society</div>
-<div class="card">IEEE CS SYP TECH NYERI 2025 Ambassador</div>
-<div class="card">IEEE IMAS 2025 Conference Ambassador</div>
-<div class="card">Membership Development Team – IEEE KCE</div>
-
-</section>
-
-<!-- CONTACT -->
-<section class="hidden">
-<h2>Contact</h2>
-<p>Email: rahmathullareemaz@gmail.com</p>
-<p>Phone: 8056423233</p>
-</section>
 
 <script>
-/* slower typing */
 const text = ["Embedded Developer", "IoT Enthusiast", "Problem Solver"];
 let i=0,j=0,current="",isDeleting=false;
 
@@ -182,20 +236,9 @@ function type(){
 
     document.getElementById("typing").innerHTML=current;
   }
-  setTimeout(type,150); /* slower */
+  setTimeout(type,140);
 }
 type();
-
-/* smooth scroll reveal */
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-
-document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
 </script>
 
 </body>
