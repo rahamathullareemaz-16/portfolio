@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projects</title>
+
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#020617;
+  color:white;
+  padding:40px;
+}
+
+/* NAV */
+nav{
+  margin-bottom:40px;
+}
+nav a{
+  color:#38bdf8;
+  margin-right:20px;
+  text-decoration:none;
+}
+
+/* PROJECT BLOCK */
+.project{
+  margin-bottom:80px;
+}
+
+/* TAG */
+.tag{
+  background:#e2d3b5;
+  color:black;
+  padding:8px 18px;
+  border-radius:25px;
+  display:inline-block;
+  margin-bottom:15px;
+}
+
+/* TITLE */
+h1{
+  font-size:42px;
+}
+
+/* HEADINGS */
+h2{
+  color:#38bdf8;
+  margin-top:25px;
+}
+
+/* TEXT */
+p{
+  color:#cbd5f5;
+  line-height:1.7;
+  font-size:17px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="projects.html">Projects</a>
+</nav>
+
+<!-- ECG PROJECT -->
+<div class="project">
+
+<span class="tag">Embedded + AI</span>
+
+<h1>Intelligent Adaptive Real-Time ECG Monitoring</h1>
+
+<h2>Problem</h2>
+<p>
+Cardiovascular diseases require continuous monitoring, but traditional ECG systems rely on static scheduling and fail under high CPU load, leading to missed deadlines and unreliable monitoring.
+</p>
+
+<h2>Solution</h2>
+<p>
+Developed an intelligent real-time ECG monitoring system using Raspberry Pi and biomedical sensors (AD8232, MAX30102, DS18B20). Integrated predictive CPU control and AI-based health analytics for reliable operation.
+</p>
+
+<h2>Implementation</h2>
+<p>
+Implemented multi-threading using POSIX threads with SCHED_FIFO scheduling. Designed predictive CPU trend analysis, adaptive gain control, and medical-aware priority scheduling to ensure real-time performance.
+</p>
+
+<h2>Outcome</h2>
+<p>
+Achieved stable CPU utilization, reduced deadline misses, and ensured uninterrupted life-critical ECG processing with real-time visualization and intelligent alert generation.
+</p>
+
+</div>
+
+<!-- RAIN PROJECT -->
+<div class="project">
+
+<span class="tag">Automation</span>
+
+<h1>Smart Rain & Heat Response System</h1>
+
+<h2>Problem</h2>
+<p>
+Manual operation of windows and cooling systems leads to inconvenience, energy wastage, and damage during unexpected rainfall.
+</p>
+
+<h2>Solution</h2>
+<p>
+Designed an automated Arduino-based system to monitor rain and temperature and respond intelligently to environmental changes.
+</p>
+
+<h2>Implementation</h2>
+<p>
+Integrated rain sensor, DHT11 temperature sensor, servo motor for window control, and relay module for cooler activation. Used microcontroller logic for real-time decision making.
+</p>
+
+<h2>Outcome</h2>
+<p>
+Improved comfort, safety, and energy efficiency with fully automated system and reliable fault handling using watchdog timer.
+</p>
+
+</div>
+
+<!-- CHATBOT PROJECT -->
+<div class="project">
+
+<span class="tag">AI + ML</span>
+
+<h1>Smart Customer Support Chatbot</h1>
+
+<h2>Problem</h2>
+<p>
+Traditional customer support systems struggle to handle large volumes of queries efficiently, resulting in delays and poor user experience.
+</p>
+
+<h2>Solution</h2>
+<p>
+Developed an AI-powered chatbot combining ML-based intent recognition with GPT-based response generation to provide intelligent and flexible interactions.
+</p>
+
+<h2>Implementation</h2>
+<p>
+Built using HTML/CSS frontend, Flask backend, NLP (NLTK), and OpenAI integration. Implemented sentiment-aware responses and conversational flow handling.
+</p>
+
+<h2>Outcome</h2>
+<p>
+Delivered fast, accurate, and scalable support system with improved user satisfaction and reduced human workload.
+</p>
+
+</div>
+
+</body>
+</html>
