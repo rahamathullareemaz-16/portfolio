@@ -9,171 +9,214 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg,#020617,#0f172a);
-  color: #e2e8f0;
-}
-
-/* NAVBAR */
-nav {
-  position: sticky;
-  top: 0;
-  background: rgba(2,6,23,0.9);
-  padding: 15px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
-nav a {
-  color: #38bdf8;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-nav a:hover {
+  background: #020617;
   color: white;
+  scroll-behavior: smooth;
 }
 
-/* HERO */
-header {
-  text-align: center;
-  padding: 80px 20px;
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
 }
-header h1 {
+
+.hero img {
+  width: 280px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #38bdf8;
+}
+
+.hero-text h1 {
   font-size: 42px;
 }
-header p {
-  color: #94a3b8;
+
+.typing {
+  color: #38bdf8;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
-/* GLOW EFFECT */
-header::after {
-  content: "";
-  display: block;
-  width: 200px;
-  height: 200px;
-  margin: auto;
-  background: radial-gradient(circle,#38bdf8,transparent);
-  filter: blur(80px);
-}
-
-/* SECTIONS */
-section {
-  margin: 30px;
-  padding: 25px;
-  background: rgba(2,6,23,0.8);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  animation: fadeUp 1s;
-}
-
-/* CARDS */
-.card {
-  margin: 15px 0;
-  padding: 15px;
-  background: #1e293b;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-5px) scale(1.02);
-  background: #334155;
-}
-
-/* ANIMATION */
-@keyframes fadeUp {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-/* BUTTON */
+/* BUTTONS */
 .btn {
   display: inline-block;
-  margin-top: 10px;
+  margin: 8px;
   padding: 10px 20px;
   background: #38bdf8;
   color: black;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
 }
 .btn:hover {
   background: #0ea5e9;
+}
+
+/* SECTION */
+section {
+  padding: 60px 30px;
+}
+
+/* CARDS */
+.card {
+  background: #0f172a;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  background: #1e293b;
+}
+
+/* ANIMATION */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0f172a;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#contact">Contact</a>
-</nav>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>RAHAMATHULLA REEMAZ H</h1>
+    <p class="typing" id="typing"></p>
 
-<header>
-  <h1>RAHAMATHULLA REEMAZ H</h1>
-  <p>Embedded Systems | Firmware Developer</p>
-</header>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I’m an Electronics and Communication Engineering student with a CGPA of 7.57 and a clean academic record—no arrears, just consistent growth. But for me, engineering is more than marks or a degree; it’s about curiosity, building, and turning ideas into reality.
-    <br><br>
-    I enjoy learning by doing. Whether it’s working on circuits, exploring embedded systems, or experimenting with new tech, I believe practical experience teaches what textbooks cannot. I’m always excited to get my hands dirty and understand how things actually work.
-    <br><br>
-    I don’t just want to graduate as an engineer—I want to become one through innovation, creativity, and problem-solving. My goal is to build meaningful solutions and contribute something new to the world of technology.
-    <br><br>
-    <b>“The only way to do great work is to love what you do.”</b>
-  </p>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="card">Embedded Systems, Digital Electronics</div>
-  <div class="card">C Programming, Data Structures</div>
-  <div class="card">Arduino, ESP32, 8051</div>
-  <div class="card">Protocols: UART, SPI, I2C</div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="card">
-    <h3>ECG Monitoring System</h3>
-    <p>Real-time ECG monitoring using Raspberry Pi and biomedical sensors with AI analytics.</p>
+    <a class="btn" href="https://github.com/rahamathullareemaz-16" target="_blank">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/rahamathulla-reemaz-h-52b373299/" target="_blank">LinkedIn</a>
+    <a class="btn" href="resume.pdf" target="_blank">View Resume</a>
   </div>
 
-  <div class="card">
-    <h3>Smart Rain & Heat System</h3>
-    <p>Automated window and cooling system based on environmental conditions.</p>
-  </div>
+  <!-- Make sure file name is profile.jpg -->
+  <img src="profile.jpg" alt="profile">
+</div>
 
-  <div class="card">
-    <h3>Chatbot using ML & GPT</h3>
-    <p>AI chatbot for intelligent customer support and query handling.</p>
-  </div>
+<!-- ABOUT -->
+<section class="hidden">
+<h2>About Me</h2>
+<p>
+I’m an Electronics and Communication Engineering student with a CGPA of 7.57 and a clean academic record—no arrears, just consistent growth.  
+Engineering for me is about curiosity, building, and turning ideas into reality.  
+
+I enjoy learning by doing—working on circuits, embedded systems, and real-time applications.  
+I aim to create meaningful solutions and grow through innovation and problem-solving.  
+
+<b>“The only way to do great work is to love what you do.”</b>
+</p>
+</section>
+
+<!-- SKILLS -->
+<section class="hidden">
+<h2>Skills</h2>
+<div class="card">Embedded Systems, Digital Electronics</div>
+<div class="card">C Programming, Data Structures</div>
+<div class="card">Arduino, ESP32, 8051</div>
+<div class="card">UART, SPI, I2C</div>
+</section>
+
+<!-- PROJECTS -->
+<section class="hidden">
+<h2>Projects</h2>
+
+<div class="card">
+<h3>ECG Monitoring System</h3>
+<p>Real-time ECG monitoring using Raspberry Pi and AI-based analytics.</p>
+</div>
+
+<div class="card">
+<h3>Smart Rain & Heat System</h3>
+<p>Automated window and cooling system based on environmental conditions.</p>
+</div>
+
+<div class="card">
+<h3>Chatbot using ML & GPT</h3>
+<p>AI chatbot for intelligent customer support.</p>
+</div>
+
+<div class="card">
+<h3>Reverse Parking Assist</h3>
+<p>Ultrasonic sensor-based obstacle detection system.</p>
+</div>
 
 </section>
 
-<section id="achievements">
-  <h2>Achievements</h2>
+<!-- ACHIEVEMENTS -->
+<section class="hidden">
+<h2>Achievements</h2>
 
-  <div class="card">IEEE Member – Actively contributing to professional development.</div>
-  <div class="card">Vice Chair, IEEE Signal Processing Society – Led initiatives at KCE.</div>
-  <div class="card">IEEE CS SYP TECH NYERI 2025 Ambassador.</div>
-  <div class="card">IEEE IMAS 2025 Conference Ambassador.</div>
-  <div class="card">Membership Development Team – IEEE KCE.</div>
+<div class="card">IEEE Member – Active contributor</div>
+<div class="card">Vice Chair – IEEE Signal Processing Society</div>
+<div class="card">IEEE CS SYP TECH NYERI 2025 Ambassador</div>
+<div class="card">IEEE IMAS 2025 Conference Ambassador</div>
+<div class="card">Membership Development Team – IEEE KCE</div>
 
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: rahmathullareemaz@gmail.com</p>
-  <p>Phone: 8056423233</p>
-  <a class="btn" href="#">Download Resume</a>
+<!-- CONTACT -->
+<section class="hidden">
+<h2>Contact</h2>
+<p>Email: rahmathullareemaz@gmail.com</p>
+<p>Phone: 8056423233</p>
 </section>
+
+<footer>
+<p>© 2026 Reemaz | Portfolio</p>
+</footer>
+
+<script>
+/* Typing animation */
+const text = ["Embedded Developer", "IoT Enthusiast", "Problem Solver"];
+let i=0,j=0,current="",isDeleting=false;
+
+function type(){
+  if(i<text.length){
+    if(!isDeleting && j<=text[i].length){
+      current=text[i].substring(0,j++);
+    }
+    else if(isDeleting && j>=0){
+      current=text[i].substring(0,j--);
+    }
+
+    if(j==text[i].length) isDeleting=true;
+    if(j==0){ isDeleting=false; i++; }
+
+    document.getElementById("typing").innerHTML=current;
+  }
+  setTimeout(type,100);
+}
+type();
+
+/* Scroll animation */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
